@@ -1,5 +1,3 @@
-from transaction import*
-
 class Menu:
     def __init__(self):
         pass
@@ -30,7 +28,7 @@ class Menu:
         return self.get_menu_choice("\nPilih Menu (1/2): ", 2)
     
     def total_price(self):
-        print(("/n"))
+        print(("\n"))
         print("1. Lihat total belanja anda\n"
           "2. Kembali ke menu awal\n")
         
@@ -38,14 +36,12 @@ class Menu:
     
     def get_menu_choice(self, prompt, number_of_menu):
         while True:
-            self.prompt = prompt
-            self.number_of_menu = number_of_menu
-            self.choice = input(f"{self.prompt}")
+            choice = input(f"{prompt}")
             
             try:
-                self.choice = int(self.choice)
-                if 1 <= self.choice <= number_of_menu:
-                    return self.choice
+                choice = int(choice)
+                if 1 <= choice <= number_of_menu:
+                    return choice
                 else:
                     print('Error: Salah input, hanya input sesuai pilihan menu diatas')
             except ValueError:
